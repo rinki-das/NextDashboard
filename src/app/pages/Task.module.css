@@ -1,0 +1,266 @@
+/* src/components/Task.module.css */
+
+.taskContainer {
+  padding: 1rem;
+}
+
+.taskTitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  flex: 2 1 calc(25% - 1.5rem);
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.cardContent {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.tableContainer {
+  margin-top: 2rem;
+}
+
+.tableHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: -30px;
+  font-size: 1.4rem;
+  font-weight: bold; /* Ensure 'Team Members' text is bold */
+}
+
+.tableActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom:0.6rem;
+  margin-top: -25px;
+}
+
+.boldText{
+  font-weight: bold;
+
+}
+
+/* Task.module.css */
+
+.searchContainer {
+  margin-left: 690px; /* Adjust as needed */
+  background-color: #ffffff;
+  border: none;
+  transition: margin-left 0.3s ease, padding 0.3s ease;
+  width: 250px; /* Adjust as needed */
+}
+
+.searchContainerClosed {
+  margin-left: 790px; /* Adjust as needed */
+  width: 300px;
+  border: none; /* Adjust as needed */
+}
+
+.searchField {
+  transition: width 0.3s ease, margin-left 0.3s ease;
+}
+
+.searchFieldOpen {
+  width: 250px; /* Adjust as needed */
+  margin-right: 0px; /* Adjust as needed */
+}
+
+.searchFieldClosed {
+  width: 300px; /* Adjust as needed */
+  margin-left: 0px; /* Adjust as needed */
+}
+
+
+.iconContainer {
+  display: flex;
+  gap: 0.7rem;
+  margin-left: 10px;
+}
+
+.iconButton {
+  padding: 0.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.iconButton:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.outerTableContainer {
+  position: relative;
+  overflow-x: auto;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  background-color: #ffffff;
+}
+
+.roundedTableContainer {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.roundedTable {
+  border-collapse: separate;
+  width: 100%;
+  overflow: hidden;
+}
+
+.blueHeader {
+  background-color: #f5f7f9;
+  color: #ffffff;
+  font-size: 0.8rem;
+}
+
+.paginationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+.paginationControls {
+  display: flex;
+  align-items: center;
+}
+
+.paginationControls .MuiIconButton-root {
+  margin: 0 3px;
+  font-size: 0.8rem;
+}
+
+.paginationControls span {
+  cursor: pointer;
+  padding: 1px 1px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.paginationControls span:hover {
+  background-color: #d8eef8;
+}
+
+.fullscreenTableContainer {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: #fff;
+  padding: 1.5rem;
+}
+
+.fullscreenTable {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 !important;
+}
+
+
+.photoCheckbox {
+  margin-right: 10px;
+  margin-top: 40px;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+}
+
+.checkboxInput {
+  margin-right: 5px; /* Adjust spacing */
+}
+
+.roundPhoto {
+  display: inline-block;
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 4px;
+  margin-top: -5px;
+}
+
+.roundPhoto .MuiAvatar-root {
+  width: 20px; 
+  height: 20px;
+   
+}
+
+
+.employeeName {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.emailIcon {
+  width: 24px; 
+  height: 24px; 
+  cursor: pointer;
+  
+}
+
+/* Task.module.css */
+
+/* Styles for table headers */
+.tableHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: -30px;
+  font-size: 1.2rem; /* Adjust the font size as needed */
+  font-weight: bold; /* Ensure 'Team Members' text is bold */
+}
+
+/* Styles for individual table headers */
+.tableHeaderCell {
+  position: relative; /* Ensure the position is relative for sorting icons */
+  padding: 10px; /* Adjust padding as needed */
+  cursor: pointer; 
+  font-size: 0.8rem; 
+  text-align: left;
+
+}
+
+/* Icon styling */
+.sortIcon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tableRow:hover {
+  background-color: #f0f0f0; /* Change to your desired hover color */
+}

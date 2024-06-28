@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-color: #000; /* Default foreground color */
+  --background-color: #D4F1F4; /* Default background color */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-color: #020202; /* Adjust for dark mode */
+    --background-color: #f4f9ff; /* Adjust for dark mode */
+  }
+}
+
+body {
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

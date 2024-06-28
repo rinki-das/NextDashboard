@@ -1,0 +1,170 @@
+/* CalendarCard.module.css */
+
+.calendarCard {
+  padding: 10px;
+  width: 100%; /* Adjust width as needed */
+  max-width: 300px; /* Example maximum width */
+ 
+  position: relative; /* Ensure position relative for absolute positioning of dropdown */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.weekdaysContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  
+}
+
+.weekdaysRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.weekday {
+  text-align: center;
+  width: calc(100% / 7); /* Distribute evenly across 7 days */
+  padding: 5px;
+  margin-top: 12px;
+  font-size: 13px;
+  
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
+  gap: 0.1px; /* Gap between grid cells */
+  border-radius: 10px;
+}
+
+.calendarDay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px; /* Adjust height as needed */
+  border: 1px solid #e6e3e3; /* Border for calendar cells */
+  padding: 10px;
+  cursor: pointer;
+}
+
+.placeholder {
+  background-color: #f2f2f2; /* Placeholder color for days before the 1st of the month */
+}
+
+.dropdown {
+  position: absolute;
+  top: 50px; /* Position dropdown below header */
+  left: 20px;
+  width: 90%;
+  max-height: 200px; /* Example maximum height */
+  overflow-y: auto; /* Enable vertical scroll */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  z-index: 1000; /* Ensure dropdown is above other content */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for dropdown */
+  display: flex;
+  flex-wrap: wrap; /* Ensure dropdown items wrap */
+}
+
+.dropdownColumn {
+  flex: 1;
+  padding: 10px;
+}
+
+.dropdownColumn h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+
+.scrollContainer {
+  max-height: 140px; /* Adjust maximum height of scroll container */
+  overflow-y: auto; /* Enable scroll for overflow */
+}
+
+.dueTimeContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  cursor: pointer; /* Make the container clickable */
+  position: absolute; /* Position due time absolutely */
+  top: -1px; /* Adjust top position as needed */
+  right: 10px; /* Adjust right position as needed */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 36%; /* Adjust width as needed */
+  height: 34px; /* Adjust height as needed */
+}
+
+.dueTimeContainer span {
+  font-size: 13px;
+  margin-right: 3px;
+  margin-left: 10px;
+  color: #b6b6b6;
+}
+
+.timePickerContainer {
+  position: absolute;
+  top: 50px; /* Position time picker below Due Time container */
+  left: 20px;
+  width: 90%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for time picker */
+  padding: 10px;
+}
+
+.timePickerContainer .react-time-picker__wrapper {
+  width: 100%;
+  max-width: 300px; /* Example maximum width */
+}
+
+.timePickerContainer .react-time-picker__clock {
+  width: 100%; /* Adjust clock width */
+}
+
+.timePickerContainer .react-time-picker__button {
+  background-color: #007bff; /* Example custom button color */
+  color: #fff; /* Example custom button text color */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.timePickerContainer .react-time-picker__button:hover {
+  background-color: #0056b3; /* Example custom button hover color */
+}
+
+.timePickerContainer .react-time-picker__button:disabled {
+  opacity: 0.5; /* Example disabled button opacity */
+  cursor: not-allowed;
+}
+
+.timePickerContainer .react-time-picker__clock {
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.timePickerContainer .react-time-picker__clock.react-time-picker__clock--open {
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for highlighting current day */
+.currentDay {
+  background-color: #007bff;
+  color: #fff;
+}

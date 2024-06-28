@@ -1,0 +1,145 @@
+/* src/components/Sidebar.module.css */
+
+.sidebar {
+  background-color: #ffffff;
+  color: rgb(38, 37, 37);
+  height: 100vh;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  transition: width 0.3s, border-radius 0.3s;
+  overflow-x: hidden;
+  border-radius: 19px;
+  position: relative;
+}
+
+.sidebarOpen {
+  width: 15rem;
+}
+
+.sidebarClosed {
+  width: 3.6rem;
+}
+
+.sidebarContent {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebarToggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  border: 1px solid #3f6de0;
+  border-radius: 100%;
+  background-color: #fff;
+  transition: right 0.3s, top 0.3s;
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem; /* Adjust position to align with sidebar edge */
+  z-index: 1000; /* Ensure the icon is above other content when sidebar is open */
+}
+
+.sidebarClosed .sidebarToggle {
+  right: 1rem;
+  top: 3rem;
+}
+
+.sidebarClosed .sidebarItems {
+margin-top: 20px;
+ 
+}
+
+
+
+.sidebarList {
+  margin-top: -0.1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarClosed .sidebarItem {
+  padding: 2rem 0.1rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  color: rgb(38, 37, 37);
+  transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
+}
+
+
+.sidebarOpen .sidebarItem {
+  padding: 1rem 0.1rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  color: rgb(38, 37, 37);
+  transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
+}
+
+.sidebarItem:hover {
+  background-color: #d9e5ef;
+  color: rgb(0, 153, 255);
+  border-radius: 10px;
+  size: bold;
+}
+.sidebarItem:hover .sidebarClosed{
+  
+}
+
+.sidebarItem:hover .sidebarIcon {
+  color: rgb(4, 141, 253);
+}
+
+.sidebarIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.sidebarIcon {
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.sidebarText {
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}
+
+.sidebarClosed .sidebarIconContainer {
+  justify-content: center; /* Center icons horizontally when sidebar is closed */
+}
+
+.sidebarClosed .sidebarItem span {
+  display: inline; /* Ensure the icons are always visible */
+  margin-left: 1.5rem; /* Center the icons in the closed state */
+}
+
+/* Logo styling */
+.sidebarLogo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.logoImage {
+  width: 55%;
+  height: auto;
+  max-width: 100%;
+  margin-right: 100px; /* Ensure the image does not exceed its container */
+  border-radius: 50%;
+  margin-bottom: 13px;
+}
