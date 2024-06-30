@@ -1,15 +1,26 @@
-// src/components/Sidebar.jsx
-
 import React, { useState } from 'react';
 import styles from './Sidebar.module.css';
 import { FiChevronRight, FiChevronLeft, FiGrid, FiBarChart2, FiFileText, FiSettings } from 'react-icons/fi';
+import Link from 'next/link'; // Import Link from Next.js for client-side navigation
 
 const Sidebar = ({ onSelect, onToggle }) => {
   const [isOpen, setIsOpen] = useState(true);
+  const [selectedItem, setSelectedItem] = useState('Task'); // Initialize with the default selected item
+  const [hoveredItem, setHoveredItem] = useState(null); // Track hovered item
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
-    onToggle(); // Call the onToggle function passed as prop
+    onToggle();
+  };
+
+  const handleItemClick = (item) => {
+    setSelectedItem(item);
+    setHoveredItem(null); // Reset hovered item when item is clicked
+    onSelect(item);
+  };
+
+  const handleItemHover = (item) => {
+    setHoveredItem(item);
   };
 
   return (
@@ -24,22 +35,42 @@ const Sidebar = ({ onSelect, onToggle }) => {
               <img src="/img1.jpg" alt="Logo" className={styles.logoImage} />
             </div>
             <ul className={styles.sidebarList}>
-              <li className={styles.sidebarItem} onClick={() => onSelect('Task')}>
+              <li
+                className={`${styles.sidebarItem} ${selectedItem === 'Task' ? styles.active : ''} ${hoveredItem === 'Task' ? styles.hovered : ''}`}
+                onClick={() => handleItemClick('Task')}
+                onMouseEnter={() => handleItemHover('Task')}
+                onMouseLeave={() => handleItemHover(null)}
+              >
                 <div className={styles.sidebarIconContainer}>
                   <FiGrid className={styles.sidebarIcon} /> <span className={styles.sidebarText}>Task</span>
                 </div>
               </li>
-              <li className={styles.sidebarItem} onClick={() => onSelect('Process')}>
+              <li
+                className={`${styles.sidebarItem} ${selectedItem === 'Process' ? styles.active : ''} ${hoveredItem === 'Process' ? styles.hovered : ''}`}
+                onClick={() => handleItemClick('Process')}
+                onMouseEnter={() => handleItemHover('Process')}
+                onMouseLeave={() => handleItemHover(null)}
+              >
                 <div className={styles.sidebarIconContainer}>
                   <FiBarChart2 className={styles.sidebarIcon} /> <span className={styles.sidebarText}>Process</span>
                 </div>
               </li>
-              <li className={styles.sidebarItem} onClick={() => onSelect('Smart Insights')}>
+              <li
+                className={`${styles.sidebarItem} ${selectedItem === 'Smart Insights' ? styles.active : ''} ${hoveredItem === 'Smart Insights' ? styles.hovered : ''}`}
+                onClick={() => handleItemClick('Smart Insights')}
+                onMouseEnter={() => handleItemHover('Smart Insights')}
+                onMouseLeave={() => handleItemHover(null)}
+              >
                 <div className={styles.sidebarIconContainer}>
                   <FiFileText className={styles.sidebarIcon} /> <span className={styles.sidebarText}>Reports</span>
                 </div>
               </li>
-              <li className={styles.sidebarItem} onClick={() => onSelect('Settings')}>
+              <li
+                className={`${styles.sidebarItem} ${selectedItem === 'Settings' ? styles.active : ''} ${hoveredItem === 'Settings' ? styles.hovered : ''}`}
+                onClick={() => handleItemClick('Settings')}
+                onMouseEnter={() => handleItemHover('Settings')}
+                onMouseLeave={() => handleItemHover(null)}
+              >
                 <div className={styles.sidebarIconContainer}>
                   <FiSettings className={styles.sidebarIcon} /> <span className={styles.sidebarText}>Settings</span>
                 </div>
@@ -48,22 +79,22 @@ const Sidebar = ({ onSelect, onToggle }) => {
           </>
         ) : (
           <ul className={styles.sidebarList}>
-            <li className={styles.sidebarItem} onClick={() => onSelect('Task')}>
+            <li className={styles.sidebarItem} onClick={() => handleItemClick('Task')}>
               <div className={styles.sidebarIconContainer}>
                 <FiGrid className={styles.sidebarIcon} />
               </div>
             </li>
-            <li className={styles.sidebarItem} onClick={() => onSelect('Process')}>
+            <li className={styles.sidebarItem} onClick={() => handleItemClick('Process')}>
               <div className={styles.sidebarIconContainer}>
                 <FiBarChart2 className={styles.sidebarIcon} />
               </div>
             </li>
-            <li className={styles.sidebarItem} onClick={() => onSelect('Smart Insights')}>
+            <li className={styles.sidebarItem} onClick={() => handleItemClick('Smart Insights')}>
               <div className={styles.sidebarIconContainer}>
                 <FiFileText className={styles.sidebarIcon} />
               </div>
             </li>
-            <li className={styles.sidebarItem} onClick={() => onSelect('Settings')}>
+            <li className={styles.sidebarItem} onClick={() => handleItemClick('Settings')}>
               <div className={styles.sidebarIconContainer}>
                 <FiSettings className={styles.sidebarIcon} />
               </div>

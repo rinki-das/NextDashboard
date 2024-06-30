@@ -1,13 +1,57 @@
-/* src/components/Task.module.css */
+/* Task.module.css */
 
-.taskContainer {
-  padding: 1rem;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .taskTitle {
   font-size: 1.4rem;
   font-weight: bold;
-  margin-bottom: 2rem;
+}
+
+.headerIcons {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.addButton {
+  text-transform: none;
+}
+
+.iconButton {
+  padding: 0.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.iconButton:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.roundPhotoContainer {
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 36px;
+  height: 36px;
+  background-color: #e5e7eb;
+}
+
+.roundPhoto {
+  width: 100%;
+  height: 100%;
+}
+
+.roundPhoto .MuiAvatar-root {
+  width: 100%;
+  height: 100%;
 }
 
 .cardContainer {
@@ -20,9 +64,8 @@
   flex: 2 1 calc(25% - 1.5rem);
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 0rem;
   margin-bottom: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -43,8 +86,12 @@
   color: #6b7280;
 }
 
+.expandedTable {
+  flex: 2 1 calc(50% - 1.5rem); 
+}
+
 .tableContainer {
-  margin-top: 2rem;
+  margin-top: -1rem;
 }
 
 .tableHeader {
@@ -52,36 +99,31 @@
   align-items: center;
   margin-bottom: -30px;
   font-size: 1.4rem;
-  font-weight: bold; /* Ensure 'Team Members' text is bold */
+  font-weight: bold;
+}
+
+.bold{
+  margin-top: 20px;
 }
 
 .tableActions {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom:0.6rem;
+  margin-bottom: 0.6rem;
   margin-top: -25px;
 }
 
-.boldText{
-  font-weight: bold;
-
-}
-
-/* Task.module.css */
-
 .searchContainer {
-  margin-left: 690px; /* Adjust as needed */
+  margin-left: 690px; 
   background-color: #ffffff;
-  border: none;
   transition: margin-left 0.3s ease, padding 0.3s ease;
-  width: 250px; /* Adjust as needed */
+  width: 270px; 
 }
 
 .searchContainerClosed {
-  margin-left: 790px; /* Adjust as needed */
-  width: 300px;
-  border: none; /* Adjust as needed */
+  margin-left: 770px; 
+  width: 370px;
 }
 
 .searchField {
@@ -89,38 +131,38 @@
 }
 
 .searchFieldOpen {
-  width: 250px; /* Adjust as needed */
-  margin-right: 0px; /* Adjust as needed */
+  width: 270px; 
+  margin-right: 0px; 
 }
 
 .searchFieldClosed {
-  width: 300px; /* Adjust as needed */
-  margin-left: 0px; /* Adjust as needed */
+  width: 370px; 
+ 
 }
-
 
 .iconContainer {
   display: flex;
-  gap: 0.7rem;
-  margin-left: 10px;
+  gap: 0.5rem;
+  margin-right: 14px;
 }
 
 .iconButton {
-  padding: 0.5rem;
+  padding: 0.3rem;
   background-color: #ffffff;
-  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
+  margin-left: 5px;
+  border: 1px solid #969696;
 }
 
 .iconButton:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(183, 180, 180, 0.2);
 }
 
 .outerTableContainer {
   position: relative;
   overflow-x: auto;
-  border-radius: 25px;
+  border-radius: 23px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 12px;
   background-color: #ffffff;
@@ -143,34 +185,39 @@
   font-size: 0.8rem;
 }
 
-.paginationContainer {
+.paginationControls {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
-  font-size: 0.8rem;
+  font-size: 0.3rem;
+  color: #6b7280;
+  margin-left: 15px;
+  margin-top: 5px;
+  gap: 10px;
+  margin-bottom: -10px;
 }
 
-.paginationControls {
+.paginationInfo {
+  margin-bottom: 0.5rem;
+}
+
+.paginationButtons {
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 
-.paginationControls .MuiIconButton-root {
-  margin: 0 3px;
-  font-size: 0.8rem;
-}
-
-.paginationControls span {
+.paginationButtons span {
   cursor: pointer;
-  padding: 1px 1px;
+  padding: 2px 8px;
   border-radius: 4px;
   font-size: 0.8rem;
 }
 
-.paginationControls span:hover {
+.paginationButtons span:hover {
   background-color: #d8eef8;
 }
+
 
 .fullscreenTableContainer {
   position: fixed;
@@ -189,36 +236,29 @@
   border-radius: 0 !important;
 }
 
-
-.photoCheckbox {
-  margin-right: 10px;
-  margin-top: 40px;
-}
-
 .checkboxContainer {
   display: flex;
   align-items: center;
 }
 
 .checkboxInput {
-  margin-right: 5px; /* Adjust spacing */
+  margin-right: 5px; 
 }
 
-.roundPhoto {
+.roundPhotos {
   display: inline-block;
-  margin-left: 10px;
-  width: 25px;
-  height: 25px;
-  margin-bottom: 4px;
-  margin-top: -5px;
+  margin-left: 4px;
+  margin-right: -2px;
+  width: 23px;
+  height: 23px;
+  margin-bottom: 8px;
+  margin-top: -7px;
 }
 
 .roundPhoto .MuiAvatar-root {
-  width: 20px; 
+  width: 20px;
   height: 20px;
-   
 }
-
 
 .employeeName {
   font-size: 1.2rem;
@@ -226,41 +266,108 @@
 }
 
 .emailIcon {
-  width: 24px; 
-  height: 24px; 
+  width: 24px;
+  height: 24px;
   cursor: pointer;
-  
 }
 
-/* Task.module.css */
 
-/* Styles for table headers */
-.tableHeader {
-  display: flex;
-  align-items: center;
-  margin-bottom: -30px;
-  font-size: 1.2rem; /* Adjust the font size as needed */
-  font-weight: bold; /* Ensure 'Team Members' text is bold */
+.headerIcons .roundPhotoContainer {
+  margin-right: 10px;
+  width: 36px;
+  height: 36px;
+  overflow: hidden; 
 }
 
-/* Styles for individual table headers */
-.tableHeaderCell {
-  position: relative; /* Ensure the position is relative for sorting icons */
-  padding: 10px; /* Adjust padding as needed */
-  cursor: pointer; 
-  font-size: 0.8rem; 
-  text-align: left;
-
+.headerIcons .roundPhotoContainer .roundPhoto  {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
 }
 
-/* Icon styling */
-.sortIcon {
+.dropdownContent {
   position: absolute;
+  top: 65px;
   right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+  z-index: 1;
+  padding: 12px; 
+  cursor: pointer;
+  width: 160px;
 }
 
-.tableRow:hover {
-  background-color: #f0f0f0; /* Change to your desired hover color */
+.dropdownContent div {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+
+.dropdownContent div:hover {
+  background-color: #e2effc; 
+}
+
+.boldText{
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #43454b;
+  margin-bottom: -20px;
+}
+
+
+
+@media (max-width: 1200px) {
+  .cardContainer {
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card {
+    flex: 2 1 calc(33.33% - 1.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 2 1 calc(50% - 1.5rem);
+  }
+
+  .searchContainer {
+    margin-right: 10px; 
+    width: 200px;
+  }
+  
+  .searchContainerClosed {
+    margin-left: 10px;
+    width: 300px;
+  }
+  
+  .outerTableContainer {
+    border-radius: 20px;
+  }
+
+  .paginationControls span {
+    padding: 0px 1px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex: 2 1 calc(100% - 1.5rem);
+  }
+}
+.drawerContent {
+  width: 90%; /* Increase width to 60% of the page */
+  padding: 20px; /* Add padding for content spacing */
+  box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #000; /* Customize the color as needed */
 }

@@ -2,17 +2,16 @@
 
 .calendarCard {
   padding: 10px;
-  width: 100%; /* Adjust width as needed */
-  max-width: 300px; /* Example maximum width */
- 
-  position: relative; /* Ensure position relative for absolute positioning of dropdown */
+  width: 100%; 
+  position: relative;
+  height: 330px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-top: 7px;
 }
 
 .weekdaysContainer {
@@ -55,23 +54,23 @@
 }
 
 .placeholder {
-  background-color: #f2f2f2; /* Placeholder color for days before the 1st of the month */
+  background-color: #f2f2f2; 
 }
 
 .dropdown {
   position: absolute;
-  top: 50px; /* Position dropdown below header */
+  top: 50px; 
   left: 20px;
   width: 90%;
-  max-height: 200px; /* Example maximum height */
-  overflow-y: auto; /* Enable vertical scroll */
+  max-height: 200px;
+  overflow-y: auto;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
-  z-index: 1000; /* Ensure dropdown is above other content */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for dropdown */
+  z-index: 1000; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
   display: flex;
-  flex-wrap: wrap; /* Ensure dropdown items wrap */
+  flex-wrap: wrap;
 }
 
 .dropdownColumn {
@@ -88,22 +87,22 @@
 }
 
 .scrollContainer {
-  max-height: 140px; /* Adjust maximum height of scroll container */
-  overflow-y: auto; /* Enable scroll for overflow */
+  max-height: 140px; 
+  overflow-y: auto;
 }
 
 .dueTimeContainer {
   display: flex;
   align-items: center;
   margin-top: 10px;
-  cursor: pointer; /* Make the container clickable */
-  position: absolute; /* Position due time absolutely */
-  top: -1px; /* Adjust top position as needed */
-  right: 10px; /* Adjust right position as needed */
+  cursor: pointer; 
+  position: absolute; 
+  top: -1px; 
+  right: 10px; 
   border: 1px solid #ccc;
   border-radius: 8px;
-  width: 36%; /* Adjust width as needed */
-  height: 34px; /* Adjust height as needed */
+  width: 36%;
+  height: 34px; 
 }
 
 .dueTimeContainer span {
@@ -115,29 +114,29 @@
 
 .timePickerContainer {
   position: absolute;
-  top: 50px; /* Position time picker below Due Time container */
+  top: 50px; 
   left: 20px;
   width: 90%;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
   z-index: 1000;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for time picker */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
   padding: 10px;
 }
 
 .timePickerContainer .react-time-picker__wrapper {
   width: 100%;
-  max-width: 300px; /* Example maximum width */
+  max-width: 300px; 
 }
 
 .timePickerContainer .react-time-picker__clock {
-  width: 100%; /* Adjust clock width */
+  width: 100%; 
 }
 
 .timePickerContainer .react-time-picker__button {
-  background-color: #007bff; /* Example custom button color */
-  color: #fff; /* Example custom button text color */
+  background-color: #007bff;
+  color: #fff; 
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
@@ -146,11 +145,11 @@
 }
 
 .timePickerContainer .react-time-picker__button:hover {
-  background-color: #0056b3; /* Example custom button hover color */
+  background-color: #0056b3; 
 }
 
 .timePickerContainer .react-time-picker__button:disabled {
-  opacity: 0.5; /* Example disabled button opacity */
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
@@ -163,8 +162,11 @@
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for highlighting current day */
 .currentDay {
   background-color: #007bff;
   color: #fff;
+}
+.calendarGrid{
+  margin-left: -5px;
+  margin-top: -10px;
 }

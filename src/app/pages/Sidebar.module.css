@@ -1,5 +1,3 @@
-/* src/components/Sidebar.module.css */
-
 .sidebar {
   background-color: #ffffff;
   color: rgb(38, 37, 37);
@@ -42,21 +40,15 @@
   transition: right 0.3s, top 0.3s;
   position: absolute;
   top: 1.2rem;
-  right: 1rem; /* Adjust position to align with sidebar edge */
-  z-index: 1000; /* Ensure the icon is above other content when sidebar is open */
+  right: 1rem; 
+  z-index: 1000;
 }
 
 .sidebarClosed .sidebarToggle {
   right: 1rem;
-  top: 3rem;
+  top: 1rem;
+  margin-bottom: 20px;
 }
-
-.sidebarClosed .sidebarItems {
-margin-top: 20px;
- 
-}
-
-
 
 .sidebarList {
   margin-top: -0.1rem;
@@ -65,40 +57,32 @@ margin-top: 20px;
   flex-direction: column;
 }
 
-.sidebarClosed .sidebarItem {
-  padding: 2rem 0.1rem;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  color: rgb(38, 37, 37);
-  transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
-}
-
-
-.sidebarOpen .sidebarItem {
+.sidebarItem {
   padding: 1rem 0.1rem;
   cursor: pointer;
   width: 100%;
+  margin-top: 5px;
   text-align: left;
   display: flex;
   align-items: center;
-  color: rgb(38, 37, 37);
+  color: rgb(104, 103, 103);
   transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
 }
 
-.sidebarItem:hover {
+.sidebarClosed .sidebarItem {
+  padding: 1rem 0rem;
+  margin-top: 10px; /* Adjust margin for smaller hover area */
+}
+
+.sidebarItem:hover,
+.sidebarItem.hovered {
   background-color: #d9e5ef;
   color: rgb(0, 153, 255);
   border-radius: 10px;
-  size: bold;
-}
-.sidebarItem:hover .sidebarClosed{
-  
 }
 
-.sidebarItem:hover .sidebarIcon {
+.sidebarItem:hover .sidebarIcon,
+.sidebarItem.hovered .sidebarIcon {
   color: rgb(4, 141, 253);
 }
 
@@ -121,14 +105,20 @@ margin-top: 20px;
 
 .sidebarClosed .sidebarIconContainer {
   justify-content: center; /* Center icons horizontally when sidebar is closed */
+  margin-top: 40px; /* Adjust margin for smaller hover area */
 }
 
 .sidebarClosed .sidebarItem span {
-  display: inline; /* Ensure the icons are always visible */
+  display: inline;
   margin-left: 1.5rem; /* Center the icons in the closed state */
 }
 
-/* Logo styling */
+.active {
+  background-color: #d9e5ef;
+  color: rgb(0, 153, 255);
+  border-radius: 10px;
+}
+
 .sidebarLogo {
   display: flex;
   justify-content: center;
@@ -139,7 +129,7 @@ margin-top: 20px;
   width: 55%;
   height: auto;
   max-width: 100%;
-  margin-right: 100px; /* Ensure the image does not exceed its container */
+  margin-right: 100px;
   border-radius: 50%;
   margin-bottom: 13px;
 }

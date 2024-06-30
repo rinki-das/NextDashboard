@@ -1,7 +1,7 @@
 // CalendarCard.jsx
 
 import React, { useState } from 'react';
-import styles from '../components/CalendarCard.module.css';
+import styles from './CalendarCard.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faClock } from '@fortawesome/free-solid-svg-icons'; // FontAwesome icons
 import { getDaysInMonth, isToday } from 'date-fns'; // Example: date-fns for date manipulation
@@ -15,7 +15,7 @@ const CalendarCard = () => {
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
-    // Handle date change logic here
+  
   };
 
   // Function to generate an array of days in the selected month
@@ -56,14 +56,14 @@ const CalendarCard = () => {
   const handleSelectMonthYear = (month, year) => {
     setSelectedDate(new Date(year, month));
     setShowDropdown(false);
-    // Additional logic for handling date change based on selected month and year
+
   };
 
   // Function to handle due time selection
   const handleDueTimeChange = (time) => {
     setDueTime(time);
     setShowTimePicker(false);
-    // Additional logic for handling due time selection
+
   };
 
   // Function to generate months options

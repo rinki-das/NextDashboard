@@ -1,0 +1,22 @@
+.panel-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30%; /* Adjust width as needed */
+    height: 100%;
+    background-color: #fff; /* Panel background color */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    z-index: 1000; /* Ensure panel is above other content */
+    transition: transform 0.3s ease; /* Optional: Add smooth transition */
+  
+    /* Adjust the transform property to slide in/out from the left */
+    transform: translateX(0%);
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1100; /* Ensure close button is above panel content */
+  }
+  
