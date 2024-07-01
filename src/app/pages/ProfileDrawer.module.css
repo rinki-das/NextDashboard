@@ -1,0 +1,318 @@
+.profileDrawer {
+  width: 920px; /* Adjust width as per your design */
+}
+
+.drawerHeader {
+  display: flex;
+  justify-content: flex-end; /* Align close icon to the right */
+  padding: 16px;
+}
+
+.closeIcon {
+  cursor: pointer;
+}
+
+.drawerContent {
+  padding: 16px;
+}
+
+.profileContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.drawerAvatar {
+  width: 90px; /* Adjust avatar size */
+  height: 90px; /* Adjust avatar size */
+  margin-right: 16px;
+}
+
+.drawerName {
+  font-size: 1.4rem;
+  margin-bottom: -3px;
+  font-weight: bold;
+}
+
+.drawerInfo {
+  color: #666;
+  margin-bottom: -2px;
+  font-size: 1.2rem;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Align icons to the right */
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px; /* Adjust icon container width */
+  height: 35px; /* Adjust icon container height */
+  border: 1px solid #ccc; /* Border styling */
+  border-radius: 8px; /* Rounded corners */
+  margin-left: 16px; /* Adjust margin as needed */
+}
+
+.calendarIcon {
+  color: #333; /* Icon color */
+}
+
+.downloadIcon {
+  color: #333; /* Icon color */
+}
+
+.horizontalCards {
+  display: flex;
+  margin-top: 16px; /* Adjust margin as needed */
+}
+
+.card {
+  width: 70%; /* Each card takes 50% width */
+  padding: 15px;
+  margin-top: 26px; 
+  gap:10px ;
+}
+
+/* PerformanceCard Container Border */
+.performanceCard {
+  border: 2px solid #e7e6e6; /* Border styling */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; 
+  height: 290px;
+  width: 330px; /* Padding inside the border */
+}
+
+/* Custom Card Styles */
+.customCard {
+  background-color: #ffffff;
+  padding: 16px;
+  border: 2px solid #ecebeb;
+  border-radius: 8px;
+  margin-left: 4px;
+  width: 36rem;
+}
+
+.customCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customCardTitle {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.statusContainer {
+  display: flex;
+  align-items: center;
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 4px;
+  margin-top: -20px;
+}
+
+.greenDot {
+  background-color: green;
+}
+
+.blueDot {
+  background-color: rgb(23, 116, 239);
+}
+
+.statusText {
+  font-size: 0.6rem;
+  margin-top: -20px;
+}
+
+.customCardContent {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* Additional Classes for the new section */
+.flex {
+  display: flex;
+}
+
+.itemsCenter {
+  align-items: center;
+}
+
+.spaceX2 {
+  margin-left: 8px;
+}
+
+.bgGray200 {
+  background-color: #e2e8f0;
+  width: 7rem;
+  height: 1.2rem;
+  margin-top: -20px;
+}
+
+.padding2 {
+  padding: 8px;
+}
+
+.roundedLG {
+  border-radius: 8px;
+}
+
+.textGray500 {
+  color: #aaabad;
+}
+
+.textSM {
+  font-size: 0.6rem;
+}
+
+.graphContainer {
+  margin-top: 16px; /* Adjust as needed */
+  width: 100%;
+  height: 75%;
+}
+.notApprovedText {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.profileInformation {
+  margin-top: 20px;
+  margin-left: 21px;
+  
+}
+
+.borderedContainer {
+  display: flex;
+  align-items: center;
+  padding: px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 20rem;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.borderedContainer:hover {
+  background-color: #f0f8ff; /* Light blue background on hover */
+}
+
+.verticalDivider {
+  height: 24px;
+  border-left: 1px solid #ccc;
+  margin: 0 10px;
+}
+.boldText {
+  font-weight: bold;
+  margin-top: 17px;
+  margin-left: 20px; 
+}
+
+.tableContainer{
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.tableHeaderCell {
+  /* Styles for table header cells */
+  padding: 7px 16px; /* Adjust padding as needed */
+  background-color: #f0f4f7; /* Light gray background color */
+
+}
+
+.tableCell {
+  /* Styles for table cells */
+  padding: 7px 16px; /* Adjust padding as needed */
+}
+
+.assigneeAvatar{
+  width: 2rem;
+  height: 2rem;
+  margin-left: -0.5rem;
+}
+
+.assigneeName{
+  margin-top: -1.7rem;
+  margin-left: 2.5rem;
+}
+
+
+.upcomingContainer {
+  background-color: #bdd9f0;
+  color: rgb(15, 128, 227);
+  padding: 6px px; 
+  border-radius: 4px;
+  text-align: center; 
+  display: inline-block; 
+  vertical-align: middle; 
+  border-radius: 20px;
+  font-size: 0.79rem;
+  width: 4.3rem;
+  height: 1.3rem;
+}
+
+.overdueContainer {
+  background-color: #f4b1ac; 
+  color: rgb(156, 64, 64);
+  padding: 6px px; 
+  border-radius: 4px;
+  text-align: center; 
+  display: inline-block; 
+  vertical-align: middle;
+  border-radius: 20px; 
+  font-size: 0.79rem;
+  width: 4.3rem;
+  height: 1.3rem;
+}
+
+/* ProfileDrawer.module.css */
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.paginationLeft {
+  font-size: 12px;
+  color: #333;
+}
+
+.paginationRight {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #333;
+
+}
+
+.paginationRight span {
+  margin: 0 8px;
+}
+
+.paginationIcon {
+  cursor: pointer;
+  color: #555;
+}
+
+/* Adjust icon sizes or additional styles as needed */
