@@ -7,7 +7,8 @@
 import React, { useState } from 'react';
 import Sidebar from './pages/Sidebar'; // Adjusted import path for Sidebar
 import MainPage from './pages/MainPage'; // Adjusted import path for MainPage
-import AddTask from './pages/AddTask'; // Adjusted import path for AddTask
+import AddTask from './pages/AddTask';
+
 import SmartInsights from './pages/SmartInsights'; // Import the SmartInsights component
 
 const DashboardPage = () => {
