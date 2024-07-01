@@ -26,6 +26,7 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { faBell as farBell, faEnvelope, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import CloseIcon from '@mui/icons-material/Close';
+import ProfileDrawer from './ProfileDrawer'; // Adjust the path as necessary
 
 
 const employees = [
@@ -43,12 +44,7 @@ const employees = [
   { name: 'Christopher Jackson', taskOverdue: 0, weeklyScore: 90, department: 'Marketing', branch: 'San Francisco', notApprovedCount: 0, photo: 'https://s3-alpha-sig.figma.com/img/9665/f675/3103df52ee78d6e4d9f90d52ba269b53?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=j84Etei6f11fYmQVVKWX4IZhNsIS-INNECL83kjGxjxYabCDrEXGATzDkO9FKPKM-kLfw6a2hZYTH-e2XCNazVYy4LxiFogjzMmm6nFI6ZEL9HV6xJ~KMvKS8BnPrjKaF6FB4PLiaoKPUmbwtKSxbD0d-tWu3w1Z-YhJdCf9oe9Jp1RDCtIbOZcGDXGMRs6e9kFJvvLx6oznaU43NnJZoLF64eI067ZEr3FDZgabGsaBSf2HiF~w0hlnCvz7rcd4gzWTJZRaIvJu4l4-sea9HTud6oYVe-E4fN7V2-5VVs8kenc4eLT0ZuVgbFq4jujLakxCGUKafzbqx-Z123DmQg__' },
   { name: 'Linda White', taskOverdue: 1, weeklyScore: 87, department: 'Engineering', branch: 'New York', notApprovedCount: 1, photo: 'https://s3-alpha-sig.figma.com/img/9665/f675/3103df52ee78d6e4d9f90d52ba269b53?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=j84Etei6f11fYmQVVKWX4IZhNsIS-INNECL83kjGxjxYabCDrEXGATzDkO9FKPKM-kLfw6a2hZYTH-e2XCNazVYy4LxiFogjzMmm6nFI6ZEL9HV6xJ~KMvKS8BnPrjKaF6FB4PLiaoKPUmbwtKSxbD0d-tWu3w1Z-YhJdCf9oe9Jp1RDCtIbOZcGDXGMRs6e9kFJvvLx6oznaU43NnJZoLF64eI067ZEr3FDZgabGsaBSf2HiF~w0hlnCvz7rcd4gzWTJZRaIvJu4l4-sea9HTud6oYVe-E4fN7V2-5VVs8kenc4eLT0ZuVgbFq4jujLakxCGUKafzbqx-Z123DmQg__' },
   { name: 'Anthony Harris', taskOverdue: 2, weeklyScore: 77, department: 'Finance', branch: 'Chicago', notApprovedCount: 3 , photo: 'https://s3-alpha-sig.figma.com/img/9665/f675/3103df52ee78d6e4d9f90d52ba269b53?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=j84Etei6f11fYmQVVKWX4IZhNsIS-INNECL83kjGxjxYabCDrEXGATzDkO9FKPKM-kLfw6a2hZYTH-e2XCNazVYy4LxiFogjzMmm6nFI6ZEL9HV6xJ~KMvKS8BnPrjKaF6FB4PLiaoKPUmbwtKSxbD0d-tWu3w1Z-YhJdCf9oe9Jp1RDCtIbOZcGDXGMRs6e9kFJvvLx6oznaU43NnJZoLF64eI067ZEr3FDZgabGsaBSf2HiF~w0hlnCvz7rcd4gzWTJZRaIvJu4l4-sea9HTud6oYVe-E4fN7V2-5VVs8kenc4eLT0ZuVgbFq4jujLakxCGUKafzbqx-Z123DmQg__'},
-  { name: 'Barbara Martin', taskOverdue: 4, weeklyScore: 79, department: 'HR', branch: 'Boston', notApprovedCount: 2, photo: '/images/john_doe.jpg' },
-  { name: 'Joseph Thompson', taskOverdue: 3, weeklyScore: 81, department: 'Design', branch: 'Austin', notApprovedCount: 1, photo: '/images/john_doe.jpg' },
-  { name: 'Susan Garcia', taskOverdue: 0, weeklyScore: 92, department: 'Marketing', branch: 'San Francisco', notApprovedCount: 0 , photo: '/images/john_doe.jpg'},
-  { name: 'Charles Martinez', taskOverdue: 5, weeklyScore: 68, department: 'Engineering', branch: 'Denver', notApprovedCount: 4 , photo: '/images/john_doe.jpg'},
-  { name: 'Karen Robinson', taskOverdue: 1, weeklyScore: 85, department: 'Finance', branch: 'Chicago', notApprovedCount: 1 ,photo: '/images/john_doe.jpg'},
-  { name: 'Steven Clark', taskOverdue: 2, weeklyScore: 77, department: 'HR', branch: 'Boston', notApprovedCount: 2 , photo: '/images/john_doe.jpg'},
+  
 ];
 
 const AddTask = ({ isSidebarOpen }) => {
@@ -56,6 +52,7 @@ const AddTask = ({ isSidebarOpen }) => {
   const rowsPerPage = 10;
   const startIndex = (page - 1) * rowsPerPage;
   const endIndex = startIndex + rowsPerPage;
+  
   const [searchQuery, setSearchQuery] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
   const [isTableFullscreen, setIsTableFullscreen] = useState(false);
@@ -66,7 +63,7 @@ const AddTask = ({ isSidebarOpen }) => {
   const [department, setDepartment] = useState('');
   const [selectedInterval, setSelectedInterval] = useState('');
   const [selectedScore, setSelectedScore] = useState('');
-
+  const [profileOpen, setProfileOpen] = useState(false);
   // Function to handle pagination controls
   const handlePageChange = (newPage) => {
     setPage(newPage);
@@ -141,6 +138,19 @@ const AddTask = ({ isSidebarOpen }) => {
   };
 
 
+ // Function to handle opening profile drawer
+ const handleProfileOpen = () => {
+  setProfileOpen(true);
+  setIsDropdownOpen(false); // Close dropdown when profile drawer opens
+};
+
+// Function to handle closing profile drawer
+const handleProfileClose = () => {
+  setProfileOpen(false);
+};
+
+
+
 
   return (
     <div className={styles.taskContainer}>
@@ -168,18 +178,32 @@ const AddTask = ({ isSidebarOpen }) => {
     <FontAwesomeIcon icon={faChevronDown} style={{ color: "#9d9b9b", fontSize: '10px' , cursor: "pointer",   marginLeft: "-10px"
 }} onClick={toggleDropdown}  /> 
     
-          {isDropdownOpen && (
-            <div className={styles.dropdownContent}>
-              <Typography component="div" className={styles.dropdownItem}>
-                <a href="#" className={`${styles.profileLink} profileLink`}>Profile Name</a>
-              </Typography>
-              <Typography component="div" className={styles.dropdownItem}>
-                <a href="#" className={`${styles.profileLink} profileLink`}>Logout</a>
-              </Typography>
-            </div>
-          )}
+
+ {isDropdownOpen && (
+              <div className={styles.dropdownContent}>
+                <Typography component="div" className={styles.dropdownItem}>
+                  <span className={`${styles.profileLink} profileLink`} onClick={handleProfileOpen}>
+                    Profile
+                  </span>
+                </Typography>
+                <Typography component="div" className={styles.dropdownItem}>
+                  <span className={`${styles.profileLink} profileLink`}>
+                    Logout
+                  </span>
+                </Typography>
+              </div>
+            )}
+          </div>
+<Drawer
+  anchor="right"
+  open={profileOpen}
+  onClose={handleProfileClose}
+>
+  <ProfileDrawer handleProfileClose={handleProfileClose} /> {/* Pass handleProfileClose */}
+</Drawer>
+
         </div>
-      </div>
+          
      
       <div className={`${styles.tableContainer} ${isTableFullscreen ? styles.fullscreenTableContainer : ''}`}>
         <div className={styles.tableHeader}>

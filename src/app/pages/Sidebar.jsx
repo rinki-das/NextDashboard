@@ -1,12 +1,13 @@
+// Sidebar.js
+
 import React, { useState } from 'react';
 import styles from './Sidebar.module.css';
 import { FiChevronRight, FiChevronLeft, FiGrid, FiBarChart2, FiFileText, FiSettings } from 'react-icons/fi';
-import Link from 'next/link'; // Import Link from Next.js for client-side navigation
 
 const Sidebar = ({ onSelect, onToggle }) => {
   const [isOpen, setIsOpen] = useState(true);
-  const [selectedItem, setSelectedItem] = useState('Task'); // Initialize with the default selected item
-  const [hoveredItem, setHoveredItem] = useState(null); // Track hovered item
+  const [selectedItem, setSelectedItem] = useState('Task');
+  const [hoveredItem, setHoveredItem] = useState(null);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -15,7 +16,7 @@ const Sidebar = ({ onSelect, onToggle }) => {
 
   const handleItemClick = (item) => {
     setSelectedItem(item);
-    setHoveredItem(null); // Reset hovered item when item is clicked
+    setHoveredItem(null);
     onSelect(item);
   };
 
@@ -31,7 +32,7 @@ const Sidebar = ({ onSelect, onToggle }) => {
       <div className={styles.sidebarContent}>
         {isOpen ? (
           <>
-            <div className={styles.sidebarLogo}>
+            <div className={styles.sidebarLogo} onClick={() => handleItemClick('')}>
               <img src="/img1.jpg" alt="Logo" className={styles.logoImage} />
             </div>
             <ul className={styles.sidebarList}>

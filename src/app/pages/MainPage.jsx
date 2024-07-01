@@ -30,6 +30,7 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { faBell as farBell, faEnvelope, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import CloseIcon from '@mui/icons-material/Close';
+import ProfileDrawer from './ProfileDrawer'; 
 
 
 const employees = [
@@ -70,6 +71,10 @@ const Task = ({ isSidebarOpen }) => {
   const [department, setDepartment] = useState('');
   const [selectedInterval, setSelectedInterval] = useState('');
   const [selectedScore, setSelectedScore] = useState('');
+  const [profileOpen, setProfileOpen] = useState(false);
+
+
+
   // Function to handle pagination controls
   const handlePageChange = (newPage) => {
     setPage(newPage);
@@ -142,6 +147,19 @@ const Task = ({ isSidebarOpen }) => {
     setSelectedScore(score);
   };
 
+  
+ // Function to handle opening profile drawer
+ const handleProfileOpen = () => {
+  setProfileOpen(true);
+  setIsDropdownOpen(false); // Close dropdown when profile drawer opens
+};
+
+// Function to handle closing profile drawer
+const handleProfileClose = () => {
+  setProfileOpen(false);
+};
+
+
 
   return (
     <div className={styles.taskContainer}>
@@ -158,28 +176,39 @@ const Task = ({ isSidebarOpen }) => {
             <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: '20px' }} />
           </IconButton>
           <div className={styles.roundPhotoContainer}>
-            <Avatar
-              alt="Your Name"
-              src="https://s3-alpha-sig.figma.com/img/b482/3df3/84c0d7e5be072bd4eaa9f5f603b44d01?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=K7K5m7s6hMyXX2ppITvNjnmIdVnhlXoL1hvDvall0fV8IDFvvwvnZ-NHipHRtfyahuAsnrONSSCKThn7MOQq0y7m0SIcROZdT9zmq6F8RuXVInxG-AQ9dsFux3AI6VTN~6bTmWyfBm0x46SfsMRopps6lLKEHz77k9mwKq2-JCuf4O3G7-5xf~dBMH23rjamLF0pCmE-rRrTRxZ-Gca1s-Uiw20TnxqnbZ9WBhHdx-RN6QoiW4lAqi8PZ6YmfooLto5j9MEpJeqkJklwsg4F8l4slTJ1HHlmb5hGrrNequErNkqhJByC8NInoLWXoNfSc4x-pT7av-NigaKmek70lA__"
-              className={styles.roundPhoto}
-            />
+      <Avatar
+        alt="Your Name"
+        src="https://s3-alpha-sig.figma.com/img/b482/3df3/84c0d7e5be072bd4eaa9f5f603b44d01?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=K7K5m7s6hMyXX2ppITvNjnmIdVnhlXoL1hvDvall0fV8IDFvvwvnZ-NHipHRtfyahuAsnrONSSCKThn7MOQq0y7m0SIcROZdT9zmq6F8RuXVInxG-AQ9dsFux3AI6VTN~6bTmWyfBm0x46SfsMRopps6lLKEHz77k9mwKq2-JCuf4O3G7-5xf~dBMH23rjamLF0pCmE-rRrTRxZ-Gca1s-Uiw20TnxqnbZ9WBhHdx-RN6QoiW4lAqi8PZ6YmfooLto5j9MEpJeqkJklwsg4F8l4slTJ1HHlmb5hGrrNequErNkqhJByC8NInoLWXoNfSc4x-pT7av-NigaKmek70lA__"
+        className={styles.roundPhoto}
+      />
+    </div>
+    <FontAwesomeIcon icon={faChevronDown} style={{ color: "#9d9b9b", fontSize: '10px' , cursor: "pointer",   marginLeft: "-10px"
+}} onClick={toggleDropdown}  /> 
+    
+
+ {isDropdownOpen && (
+              <div className={styles.dropdownContent}>
+                <Typography component="div" className={styles.dropdownItem}>
+                  <span className={`${styles.profileLink} profileLink`} onClick={handleProfileOpen}>
+                    Profile
+                  </span>
+                </Typography>
+                <Typography component="div" className={styles.dropdownItem}>
+                  <span className={`${styles.profileLink} profileLink`}>
+                    Logout
+                  </span>
+                </Typography>
+              </div>
+            )}
           </div>
-          <FontAwesomeIcon
-            icon={faChevronDown}
-            style={{ color: "#9d9b9b", fontSize: '10px', cursor: "pointer", marginLeft: "-10px" }}
-            onClick={toggleDropdown}
-          />
-          {isDropdownOpen && (
-            <div className={styles.dropdownContent}>
-              <Typography component="div" className={styles.dropdownItem}>
-                <a href="#" className={`${styles.profileLink} profileLink`}>Profile Name</a>
-              </Typography>
-              <Typography component="div" className={styles.dropdownItem}>
-                <a href="#" className={`${styles.profileLink} profileLink`}>Logout</a>
-              </Typography>
-            </div>
-          )}
-        </div>
+<Drawer
+  anchor="right"
+  open={profileOpen}
+  onClose={handleProfileClose}
+>
+  <ProfileDrawer handleProfileClose={handleProfileClose} /> {/* Pass handleProfileClose */}
+</Drawer>
+
       </div>
       <div className={styles.cardContainer}>
         {!isSidebarOpen && (
