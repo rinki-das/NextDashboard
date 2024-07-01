@@ -1,9 +1,11 @@
 import React from 'react';
 import { Drawer, Avatar, Typography, Table, TableContainer, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
 import { Close as CloseIcon, CalendarToday as CalendarIcon, GetApp as DownloadIcon } from '@mui/icons-material';
-import { FontAwesomeIcon, faCalendar } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faChevronsUp, faArrowUp, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Import FontAwesome icons
 import { Line } from 'react-chartjs-2';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
+
 import {
   Chart as ChartJS,
   CategoryScale,
